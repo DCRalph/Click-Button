@@ -3,6 +3,7 @@
 
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 
+//ClickButton Select (PIN, ANALOG VALUE MIN, ANALOG VALUE MAX);
 ClickButton Select (A0, 630, 650);
 ClickButton Up     (A0, 90, 110);
 ClickButton Down   (A0, 200, 300);
@@ -15,7 +16,6 @@ void setup() {
   lcd.setCursor(3, 0);
   lcd.print("BUTTON TEST");
   delay(2000);
-  lcd.setCursor(0, 0);
   lcd.clear();
 }
 
@@ -53,7 +53,8 @@ void loop() {
   }
 
   if (button() != "NO BUTTON") {
-    lcd.clear();
+    lcd.setCursor(0, 1);
+    lcd.print("                "));
     lcd.setCursor(0, 1);
     lcd.print(button());
     lcd.setCursor(10, 1);
@@ -65,7 +66,8 @@ void loop() {
       Left.Update();
       Right.Update();
     }
-    lcd.clear();
+    lcd.setCursor(0, 1);
+    lcd.print("                "));
   } else {
     lcd.setCursor(0, 1);
     lcd.print("PUSH BUTTON");
