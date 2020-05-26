@@ -54,7 +54,7 @@ void loop() {
 
   if (button() != "NO BUTTON") {
     lcd.setCursor(0, 1);
-    lcd.print("                "));
+    lcd.print("                ");
     lcd.setCursor(0, 1);
     lcd.print(button());
     lcd.setCursor(10, 1);
@@ -67,7 +67,7 @@ void loop() {
       Right.Update();
     }
     lcd.setCursor(0, 1);
-    lcd.print("                "));
+    lcd.print("                ");
   } else {
     lcd.setCursor(0, 1);
     lcd.print("PUSH BUTTON");
